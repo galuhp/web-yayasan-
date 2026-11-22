@@ -1,0 +1,79 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Galeri Kegiatan',
+  description: '[Placeholder deskripsi halaman Galeri Kegiatan]',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <HeroText
+    tagline="Dokumentasi"
+    title="[Judul Halaman Galeri Kegiatan]"
+    subtitle="[Placeholder deskripsi singkat mengenai dokumentasi foto kegiatan anak asuh dan kunjungan donatur]"
+  />
+
+  <!-- Galeri Foto -->
+  <Gallery
+    tagline="Momen Kebersamaan"
+    title="[Judul Grid Galeri Foto]"
+    subtitle="[Placeholder sub-judul galeri]"
+    columns={3}
+    images={[
+      {
+        src: '~/assets/images/default.png',
+        alt: '[Placeholder: Foto Kegiatan 1]',
+        caption: '[Caption Foto 1 — Tanggal / Nama Kegiatan]',
+      },
+      {
+        src: '~/assets/images/default.png',
+        alt: '[Placeholder: Foto Kegiatan 2]',
+        caption: '[Caption Foto 2 — Tanggal / Nama Kegiatan]',
+      },
+      {
+        src: '~/assets/images/default.png',
+        alt: '[Placeholder: Foto Kegiatan 3]',
+        caption: '[Caption Foto 3 — Tanggal / Nama Kegiatan]',
+      },
+      {
+        src: '~/assets/images/default.png',
+        alt: '[Placeholder: Foto Kegiatan 4]',
+        caption: '[Caption Foto 4 — Tanggal / Nama Kegiatan]',
+      },
+      {
+        src: '~/assets/images/default.png',
+        alt: '[Placeholder: Foto Kegiatan 5]',
+        caption: '[Caption Foto 5 — Tanggal / Nama Kegiatan]',
+      },
+      {
+        src: '~/assets/images/default.png',
+        alt: '[Placeholder: Foto Kegiatan 6]',
+        caption: '[Caption Foto 6 — Tanggal / Nama Kegiatan]',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Lihat Berita & Artikel',
+        href: getPermalink('/berita'),
+      },
+      {
+        text: 'Donasi Sekarang',
+        href: getPermalink('/donasi'),
+      },
+    ]}
+  >
+    <Fragment slot="title">[Judul Ajakan Kunjungan / Dokumentasi]</Fragment>
+    <Fragment slot="subtitle">[Placeholder deskripsi singkat ajakan melihat kabar terbaru atau berdonasi]</Fragment>
+  </CallToAction>
+</Layout>

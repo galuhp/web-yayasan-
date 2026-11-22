@@ -1,0 +1,129 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Donasi & Transparansi',
+  description: '[Placeholder deskripsi halaman Donasi & Transparansi]',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <HeroText
+    tagline="Donasi & Kepedulian"
+    title="[Judul Halaman Donasi]"
+    subtitle="[Placeholder deskripsi singkat mengenai penyaluran bantuan dan komitmen transparansi]"
+  />
+
+  <!-- Pilihan Jenis Donasi -->
+  <Features2
+    tagline="Bentuk Dukungan"
+    title="[Judul Pilihan Jenis Donasi]"
+    columns={2}
+    items={[
+      {
+        title: '[Donasi Dana / Infaq / Sedekah]',
+        description: '[Placeholder keterangan donasi dana untuk operasional & pendidikan]',
+        icon: 'tabler:cash',
+      },
+      {
+        title: '[Donasi Barang / Sembako]',
+        description: '[Placeholder keterangan penerimaan donasi barang atau bahan pokok]',
+        icon: 'tabler:package',
+      },
+      {
+        title: '[Program Orang Tua Asuh / Beasiswa]',
+        description: '[Placeholder keterangan dukungan biaya sekolah anak asuh]',
+        icon: 'tabler:school',
+      },
+      {
+        title: '[Kunjungan & Santunan Langsung]',
+        description: '[Placeholder keterangan tata cara kunjungan atau acara santunan]',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- Rekening Resmi & QRIS -->
+  <Content
+    id="rekening"
+    tagline="Rekening Resmi"
+    title="[Judul Informasi Rekening & QRIS]"
+    items={[
+      {
+        title: '[Nama Bank 1]',
+        description: 'No. Rekening: [Nomor Rekening 1] — a.n. [Nama Yayasan]',
+      },
+      {
+        title: '[Nama Bank 2]',
+        description: 'No. Rekening: [Nomor Rekening 2] — a.n. [Nama Yayasan]',
+      },
+      {
+        title: 'Konfirmasi Transfer',
+        description: '[Nomor WhatsApp Bendahara / Admin Konfirmasi]',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/default.png',
+      alt: '[Placeholder: Gambar Kode QRIS Resmi Yayasan]',
+    }}
+  >
+    <Fragment slot="content">
+      <p>[Placeholder catatan keamanan: pastikan transfer hanya ke rekening atas nama yayasan.]</p>
+    </Fragment>
+  </Content>
+
+  <!-- Kebutuhan Mendesak -->
+  <Features3
+    id="kebutuhan"
+    tagline="Kebutuhan Saat Ini"
+    title="[Judul Daftar Kebutuhan Mendesak]"
+    subtitle="[Placeholder keterangan daftar kebutuhan anak asuh dan operasional saat ini]"
+    columns={3}
+    items={[
+      {
+        title: '[Kebutuhan 1: Bahan Pokok / Sembako]',
+        description: '[Placeholder rincian jumlah/keterangan]',
+        icon: 'tabler:basket',
+      },
+      {
+        title: '[Kebutuhan 2: Perlengkapan Sekolah]',
+        description: '[Placeholder rincian jumlah/keterangan]',
+        icon: 'tabler:notebook',
+      },
+      {
+        title: '[Kebutuhan 3: Operasional / Kesehatan]',
+        description: '[Placeholder rincian jumlah/keterangan]',
+        icon: 'tabler:first-aid-kit',
+      },
+    ]}
+  />
+
+  <!-- Transparansi Laporan -->
+  <CallToAction
+    id="transparansi"
+    actions={[
+      {
+        variant: 'primary',
+        text: '[Unduh Laporan Keuangan / Donasi]',
+        href: '#',
+        icon: 'tabler:file-download',
+      },
+      {
+        text: 'Konfirmasi via Kontak',
+        href: getPermalink('/kontak'),
+      },
+    ]}
+  >
+    <Fragment slot="title">[Judul Bagian Transparansi & Laporan]</Fragment>
+    <Fragment slot="subtitle">
+      [Placeholder deskripsi singkat mengenai publikasi laporan penggunaan dana bulanan/tahunan]
+    </Fragment>
+  </CallToAction>
+</Layout>

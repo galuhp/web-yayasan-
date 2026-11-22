@@ -70,29 +70,38 @@
   @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
 }
 
-/* Sticky header: solid page background on phones, translucent page background with blur on desktop. */
+/* Floating pill header: enhanced backdrop on scroll, full-bleed when mobile menu is expanded. */
 #header.scroll > div:first-child {
-  @apply bg-page lg:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+  @apply bg-page lg:backdrop-blur-md shadow-xl shadow-black/10;
 }
 @media (width >= 64rem) {
   #header.scroll > div:first-child {
-    background-color: color-mix(in srgb, var(--aw-color-bg-page) 90%, transparent);
+    background-color: color-mix(in srgb, var(--aw-color-bg-page) 94%, transparent);
   }
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply border-b border-gray-500/20;
-  box-shadow: none;
+  @apply border border-gray-500/30;
+  background-color: color-mix(in srgb, var(--aw-color-bg-page) 92%, transparent);
 }
 
+#header.expanded {
+  top: 0;
+  width: 100%;
+  max-width: none;
+}
+#header.expanded > div:first-child {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
 #header.expanded nav {
   position: fixed;
   top: 70px;
   left: 0;
   right: 0;
   bottom: 70px !important;
-  padding: 0 5px;
+  padding: 0 12px;
 }
 
 .dropdown:focus .dropdown-menu,

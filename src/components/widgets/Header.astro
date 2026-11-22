@@ -67,27 +67,28 @@ const persistKey = `header-${Array.from(
   <header
     class:list={[
       { sticky: isSticky, relative: !isSticky, dark: isDark },
-      'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+      'top-3 z-40 flex-none mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] transition-[opacity] ease-in-out',
+      { 'max-w-6xl': !isFullWidth },
     ]}
     {...isSticky ? { 'data-aw-sticky-header': true } : {}}
     {...id ? { id } : {}}
   >
-    <div class="absolute inset-0"></div>
+    <div
+      class="absolute inset-0 rounded-full bg-page/85 dark:bg-slate-900/85 backdrop-blur-md border border-gray-200/80 dark:border-slate-700/60 shadow-lg shadow-black/5 transition-all duration-200"
+    >
+    </div>
     <div
       class:list={[
-        'relative text-default py-3 px-3 lg:px-6 mx-auto w-full',
+        'relative text-default py-2 px-4 lg:px-6 mx-auto w-full',
         {
           'lg:flex lg:justify-between': position !== 'center',
         },
         {
           'lg:grid lg:grid-cols-3 lg:items-center': position === 'center',
         },
-        {
-          'max-w-7xl': !isFullWidth,
-        },
       ]}
     >
-      <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
+      <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between items-center']}>
         <a class="flex items-center" href={getHomePermalink()}>
           <Logo />
         </a>
@@ -96,11 +97,11 @@ const persistKey = `header-${Array.from(
         </div>
       </div>
       <nav
-        class="items-center w-full lg:w-auto hidden lg:flex lg:mx-5 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
+        class="items-center w-full lg:w-auto hidden lg:flex lg:mx-4 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
         aria-label="Main navigation"
       >
         <ul
-          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center"
+          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center lg:gap-1"
         >
           {
             links.map(({ text, href, links }) => (
@@ -109,7 +110,7 @@ const persistKey = `header-${Array.from(
                   <>
                     <button
                       type="button"
-                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      class="hover:text-link dark:hover:text-white lg:hover:bg-primary/10 dark:lg:hover:bg-white/10 lg:rounded-full px-3.5 py-2.5 lg:py-2 flex items-center whitespace-nowrap transition-colors"
                     >
                       {text}{' '}
                       <Icon
@@ -117,12 +118,12 @@ const persistKey = `header-${Array.from(
                         class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline"
                       />
                     </button>
-                    <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-slate-900 dark:lg:border dark:lg:border-slate-700/50 rounded lg:absolute pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 lg:min-w-[200px] drop-shadow-xl">
+                    <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-slate-900/95 dark:lg:border dark:lg:border-slate-700/50 rounded-xl lg:absolute pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/95 lg:min-w-[200px] drop-shadow-xl lg:mt-1">
                       {links.map(({ text: text2, href: href2 }) => (
                         <li>
                           <a
                             class:list={[
-                              'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap',
+                              'first:rounded-t-xl last:rounded-b-xl lg:hover:bg-primary/10 hover:text-link dark:hover:text-white dark:hover:bg-white/10 py-2 px-5 block whitespace-nowrap transition-colors',
                               { 'aw-link-active': isActive(href2) },
                             ]}
                             href={href2}
@@ -136,7 +137,7 @@ const persistKey = `header-${Array.from(
                 ) : (
                   <a
                     class:list={[
-                      'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                      'hover:text-link dark:hover:text-white lg:hover:bg-primary/10 dark:lg:hover:bg-white/10 lg:rounded-full px-3.5 py-2.5 lg:py-2 flex items-center whitespace-nowrap transition-colors',
                       { 'aw-link-active': isActive(href) },
                     ]}
                     href={href}

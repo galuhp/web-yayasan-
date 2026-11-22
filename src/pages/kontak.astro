@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Kontak & Lokasi',
+  description: '[Placeholder deskripsi halaman Kontak & Lokasi]',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <HeroText
+    tagline="Hubungi Kami"
+    title="[Judul Halaman Kontak & Lokasi]"
+    subtitle="[Placeholder deskripsi singkat untuk keperluan kunjungan, pengantaran bantuan, atau pertanyaan]"
+  />
+
+  <!-- Detail Kontak & Lokasi -->
+  <Features2
+    id="lokasi"
+    tagline="Informasi Kontak"
+    title="[Judul Bagian Alamat & Saluran Komunikasi]"
+    columns={3}
+    items={[
+      {
+        title: 'Alamat Panti',
+        description: '[Alamat lengkap jalan, RT/RW, kelurahan, kecamatan, kota, kode pos]',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Telepon / WhatsApp',
+        description: '[Nomor Telepon / WhatsApp Pengurus]',
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'Email & Jam Kunjungan',
+        description: '[Alamat Email Resmi] · [Jam Operasional Kunjungan]',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- Formulir Pesan -->
+  <ContactUs
+    id="form"
+    title="[Judul Formulir Kirim Pesan]"
+    subtitle="[Placeholder keterangan singkat sebelum mengirim pesan]"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nama Lengkap',
+        placeholder: '[Masukkan nama Anda]',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email / No. WhatsApp',
+        placeholder: '[Masukkan email atau nomor WhatsApp]',
+      },
+    ]}
+    textarea={{
+      label: 'Pesan / Keperluan',
+      placeholder: '[Tuliskan pesan, rencana kunjungan, atau konfirmasi donasi]',
+    }}
+    disclaimer={{
+      label: '[Persetujuan penggunaan data kontak untuk membalas pesan Anda]',
+    }}
+    button="Kirim Pesan"
+    description="[Placeholder catatan waktu respons pengurus]"
+  />
+
+  <!-- FAQ -->
+  <FAQs
+    id="faq"
+    tagline="FAQ"
+    title="[Judul Pertanyaan yang Sering Diajukan]"
+    items={[
+      {
+        title: '[Pertanyaan 1: Bagaimana cara berkunjung ke panti?]',
+        description: '[Placeholder jawaban pertanyaan 1]',
+      },
+      {
+        title: '[Pertanyaan 2: Apakah menerima donasi barang atau makanan?]',
+        description: '[Placeholder jawaban pertanyaan 2]',
+      },
+      {
+        title: '[Pertanyaan 3: Bagaimana prosedur menjadi orang tua asuh?]',
+        description: '[Placeholder jawaban pertanyaan 3]',
+      },
+    ]}
+  />
+</Layout>

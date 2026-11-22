@@ -1,168 +1,105 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'Beranda',
+      href: getPermalink('/'),
+    },
+    {
+      text: 'Tentang Kami',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'Profil & Sejarah',
+          href: getPermalink('/tentang#profil'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: 'Visi & Misi',
+          href: getPermalink('/tentang#visi-misi'),
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
+          text: 'Struktur Pengurus',
+          href: getPermalink('/tentang#pengurus'),
         },
         {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'Legalitas Yayasan',
+          href: getPermalink('/tentang#legalitas'),
         },
       ],
     },
     {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
+      text: 'Program',
+      href: getPermalink('/program'),
     },
     {
-      text: 'Landing',
+      text: 'Galeri & Berita',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: 'Galeri Kegiatan',
+          href: getPermalink('/galeri'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
-      ],
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
+          text: 'Berita & Artikel',
           href: getBlogPermalink(),
         },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
       ],
     },
+    {
+      text: 'Kontak',
+      href: getPermalink('/kontak'),
+    },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [{ text: 'Donasi Sekarang', href: getPermalink('/donasi'), variant: 'primary' as const }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Tentang Kami',
       links: [
-        { text: 'Features', href: getPermalink('/#features') },
-        { text: 'Pricing', href: getPermalink('/pricing') },
-        { text: 'Services', href: getPermalink('/services') },
-        { text: 'Blog', href: getBlogPermalink() },
+        { text: 'Profil Yayasan', href: getPermalink('/tentang#profil') },
+        { text: 'Visi & Misi', href: getPermalink('/tentang#visi-misi') },
+        { text: 'Struktur Pengurus', href: getPermalink('/tentang#pengurus') },
+        { text: 'Legalitas', href: getPermalink('/tentang#legalitas') },
       ],
     },
     {
-      title: 'Demos',
+      title: 'Program & Kegiatan',
       links: [
-        { text: 'SaaS', href: getPermalink('/homes/saas') },
-        { text: 'Startup', href: getPermalink('/homes/startup') },
-        { text: 'Mobile App', href: getPermalink('/homes/mobile-app') },
-        { text: 'Personal', href: getPermalink('/homes/personal') },
-        { text: 'Landing pages', href: getPermalink('/landing/lead-generation') },
+        { text: 'Program Pembinaan', href: getPermalink('/program') },
+        { text: 'Galeri Kegiatan', href: getPermalink('/galeri') },
+        { text: 'Berita & Artikel', href: getBlogPermalink() },
       ],
     },
     {
-      title: 'Resources',
+      title: 'Donasi & Transparansi',
       links: [
-        { text: 'Documentation', href: 'https://github.com/arthelokyo/astrowind#readme' },
-        { text: 'Skills for AI agents', href: 'https://github.com/arthelokyo/astrowind/tree/main/.agents/skills' },
-        { text: 'Releases', href: 'https://github.com/arthelokyo/astrowind/releases' },
-        { text: 'Discussions', href: 'https://github.com/arthelokyo/astrowind/discussions' },
+        { text: 'Cara Donasi', href: getPermalink('/donasi') },
+        { text: 'Kebutuhan Mendesak', href: getPermalink('/donasi#kebutuhan') },
+        { text: 'Rekening Resmi', href: getPermalink('/donasi#rekening') },
+        { text: 'Laporan Transparansi', href: getPermalink('/donasi#transparansi') },
       ],
     },
     {
-      title: 'Company',
+      title: 'Kontak',
       links: [
-        { text: 'About', href: getPermalink('/about') },
-        { text: 'Contact', href: getPermalink('/contact') },
-        { text: 'Report an issue', href: 'https://github.com/arthelokyo/astrowind/issues' },
-        { text: 'License', href: 'https://github.com/arthelokyo/astrowind/blob/main/LICENSE.md' },
+        { text: 'Hubungi Kami', href: getPermalink('/kontak') },
+        { text: 'Alamat & Peta', href: getPermalink('/kontak#lokasi') },
+        { text: 'FAQ', href: getPermalink('/kontak#faq') },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Syarat & Ketentuan', href: getPermalink('/terms') },
+    { text: 'Kebijakan Privasi', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: '#' },
+    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: '#' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://arthelokyo.com"> Arthelokyo</a> · All rights reserved.
+    © [Tahun] [Nama Yayasan / Panti Asuhan]. Seluruh hak cipta dilindungi.
   `,
 };

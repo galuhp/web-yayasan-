@@ -1,0 +1,160 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Team from '~/components/widgets/Team.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Tentang Kami',
+  description: '[Placeholder deskripsi halaman Tentang Kami]',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero
+    tagline="Tentang Kami"
+    image={{
+      src: '~/assets/images/default.png',
+      alt: '[Placeholder: Foto Gedung / Pengurus & Anak Asuh]',
+    }}
+  >
+    <Fragment slot="title">
+      [Judul Halaman Tentang Kami] <span class="text-accent dark:text-white">[Sorotan]</span>
+    </Fragment>
+    <Fragment slot="subtitle"> [Placeholder ringkasan profil singkat yayasan / panti asuhan] </Fragment>
+  </Hero>
+
+  <!-- Profil & Sejarah -->
+  <Content
+    id="profil"
+    tagline="Profil & Sejarah"
+    title="[Judul Sejarah Berdirinya Panti Asuhan]"
+    items={[
+      {
+        title: 'Tahun Berdiri',
+        description: '[Tahun berdiri dan latar belakang singkat]',
+      },
+      {
+        title: 'Lingkup Layanan',
+        description: '[Placeholder sasaran penerima manfaat / anak asuh]',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/default.png',
+      alt: '[Placeholder: Foto Dokumentasi Sejarah Panti]',
+    }}
+  >
+    <Fragment slot="content">
+      <p>[Placeholder paragraf sejarah berdirinya yayasan dan panti asuhan.]</p>
+    </Fragment>
+  </Content>
+
+  <!-- Visi & Misi -->
+  <Features2
+    id="visi-misi"
+    tagline="Visi & Misi"
+    title="[Judul Bagian Visi & Misi]"
+    subtitle="[Placeholder pernyataan Visi utama yayasan]"
+    columns={2}
+    items={[
+      {
+        title: 'Visi',
+        description: '[Placeholder kalimat Visi panti asuhan]',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Misi 1',
+        description: '[Placeholder poin Misi pertama]',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Misi 2',
+        description: '[Placeholder poin Misi kedua]',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Misi 3',
+        description: '[Placeholder poin Misi ketiga]',
+        icon: 'tabler:target',
+      },
+    ]}
+  />
+
+  <!-- Struktur Pengurus -->
+  <Team
+    id="pengurus"
+    tagline="Struktur Pengurus"
+    title="[Judul Bagian Pengurus & Pengasuh]"
+    subtitle="[Placeholder deskripsi singkat tim pengurus yayasan]"
+    columns={3}
+    members={[
+      {
+        name: '[Nama Ketua Yayasan]',
+        role: 'Ketua Yayasan',
+        bio: '[Placeholder bio singkat]',
+        image: { src: '~/assets/images/default.png', alt: '[Placeholder: Foto Ketua Yayasan]' },
+      },
+      {
+        name: '[Nama Sekretaris / Bendahara]',
+        role: '[Jabatan]',
+        bio: '[Placeholder bio singkat]',
+        image: { src: '~/assets/images/default.png', alt: '[Placeholder: Foto Pengurus]' },
+      },
+      {
+        name: '[Nama Kepala Pengasuh]',
+        role: '[Jabatan]',
+        bio: '[Placeholder bio singkat]',
+        image: { src: '~/assets/images/default.png', alt: '[Placeholder: Foto Pengasuh]' },
+      },
+    ]}
+  />
+
+  <!-- Legalitas Yayasan -->
+  <Features3
+    id="legalitas"
+    tagline="Legalitas & Transparansi"
+    title="[Judul Bagian Legalitas Yayasan]"
+    subtitle="[Placeholder keterangan resmi mengenai izin dan badan hukum yayasan]"
+    columns={3}
+    items={[
+      {
+        title: 'Akta Notaris',
+        description: '[Nomor & Tanggal Akta Notaris]',
+        icon: 'tabler:file-certificate',
+      },
+      {
+        title: 'SK Kemenkumham',
+        description: '[Nomor SK Pengesahan Kemenkumham]',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Izin Operasional Dinsos',
+        description: '[Nomor Izin Operasional Dinas Sosial]',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Donasi Sekarang',
+        href: getPermalink('/donasi'),
+      },
+      {
+        text: 'Hubungi Kami',
+        href: getPermalink('/kontak'),
+      },
+    ]}
+  >
+    <Fragment slot="title">[Judul Ajakan Kolaborasi / Kunjungan]</Fragment>
+    <Fragment slot="subtitle">[Placeholder kalimat ajakan untuk berkunjung atau mendukung program panti]</Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Program & Kegiatan',
+  description: '[Placeholder deskripsi halaman Program & Kegiatan]',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <HeroText
+    tagline="Program & Kegiatan"
+    title="[Judul Halaman Program Pembinaan]"
+    subtitle="[Placeholder deskripsi singkat mengenai program pendidikan, pengasuhan, dan pengembangan anak asuh]"
+  />
+
+  <!-- Daftar Program -->
+  <Features2
+    tagline="Pilar Program"
+    title="[Judul Daftar Program Utama]"
+    subtitle="[Placeholder sub-judul daftar program]"
+    columns={2}
+    items={[
+      {
+        title: '[Program 1: Pendidikan Formal & Bimbingan Belajar]',
+        description: '[Placeholder detail program pendidikan]',
+        icon: 'tabler:school',
+      },
+      {
+        title: '[Program 2: Pembinaan Karakter & Keagamaan]',
+        description: '[Placeholder detail program pembinaan karakter/ibadah]',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: '[Program 3: Pemenuhan Gizi & Kesehatan]',
+        description: '[Placeholder detail program kesehatan anak]',
+        icon: 'tabler:heartbeat',
+      },
+      {
+        title: '[Program 4: Keterampilan & Kemandirian]',
+        description: '[Placeholder detail pelatihan keterampilan/ekstrakurikuler]',
+        icon: 'tabler:tools',
+      },
+    ]}
+  />
+
+  <!-- Jadwal Keseharian -->
+  <Steps
+    title="[Judul Jadwal Keseharian Anak Asuh]"
+    items={[
+      {
+        title: '[Waktu Pagi — misal 04.30 - 06.30]',
+        description: '[Placeholder aktivitas pagi]',
+        icon: 'tabler:sun',
+      },
+      {
+        title: '[Waktu Sekolah — misal 07.00 - 13.00]',
+        description: '[Placeholder aktivitas sekolah]',
+        icon: 'tabler:backpack',
+      },
+      {
+        title: '[Waktu Sore — misal 15.00 - 17.30]',
+        description: '[Placeholder aktivitas sore / ekstrakurikuler]',
+        icon: 'tabler:ball-football',
+      },
+      {
+        title: '[Waktu Malam — misal 18.00 - 21.00]',
+        description: '[Placeholder aktivitas belajar malam & istirahat]',
+        icon: 'tabler:moon',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/default.png',
+      alt: '[Placeholder: Foto Aktivitas Harian Anak Asuh]',
+    }}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Dukung Program Kami',
+        href: getPermalink('/donasi'),
+      },
+    ]}
+  >
+    <Fragment slot="title">[Judul Ajakan Mendukung Program]</Fragment>
+    <Fragment slot="subtitle">[Placeholder deskripsi singkat cara ikut mendukung program anak asuh]</Fragment>
+  </CallToAction>
+</Layout>
