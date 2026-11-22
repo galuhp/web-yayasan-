@@ -17,14 +17,6 @@ export const headerData = {
           text: 'Visi & Misi',
           href: getPermalink('/tentang#visi-misi'),
         },
-        {
-          text: 'Struktur Pengurus',
-          href: getPermalink('/tentang#pengurus'),
-        },
-        {
-          text: 'Legalitas Yayasan',
-          href: getPermalink('/tentang#legalitas'),
-        },
       ],
     },
     {
@@ -59,8 +51,6 @@ export const footerData = {
       links: [
         { text: 'Profil Yayasan', href: getPermalink('/tentang#profil') },
         { text: 'Visi & Misi', href: getPermalink('/tentang#visi-misi') },
-        { text: 'Struktur Pengurus', href: getPermalink('/tentang#pengurus') },
-        { text: 'Legalitas', href: getPermalink('/tentang#legalitas') },
       ],
     },
     {

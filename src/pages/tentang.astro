@@ -3,8 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Team from '~/components/widgets/Team.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -81,61 +79,6 @@ const metadata = {
         title: 'Misi 3',
         description: '[Placeholder poin Misi ketiga]',
         icon: 'tabler:target',
-      },
-    ]}
-  />
-
-  <!-- Struktur Pengurus -->
-  <Team
-    id="pengurus"
-    tagline="Struktur Pengurus"
-    title="[Judul Bagian Pengurus & Pengasuh]"
-    subtitle="[Placeholder deskripsi singkat tim pengurus yayasan]"
-    columns={3}
-    members={[
-      {
-        name: '[Nama Ketua Yayasan]',
-        role: 'Ketua Yayasan',
-        bio: '[Placeholder bio singkat]',
-        image: { src: '~/assets/images/placeholders/pengurus-avatar.png', alt: '[Placeholder: Foto Ketua Yayasan]' },
-      },
-      {
-        name: '[Nama Sekretaris / Bendahara]',
-        role: '[Jabatan]',
-        bio: '[Placeholder bio singkat]',
-        image: { src: '~/assets/images/placeholders/pengurus-avatar.png', alt: '[Placeholder: Foto Pengurus]' },
-      },
-      {
-        name: '[Nama Kepala Pengasuh]',
-        role: '[Jabatan]',
-        bio: '[Placeholder bio singkat]',
-        image: { src: '~/assets/images/placeholders/pengurus-avatar.png', alt: '[Placeholder: Foto Pengasuh]' },
-      },
-    ]}
-  />
-
-  <!-- Legalitas Yayasan -->
-  <Features3
-    id="legalitas"
-    tagline="Legalitas & Transparansi"
-    title="[Judul Bagian Legalitas Yayasan]"
-    subtitle="[Placeholder keterangan resmi mengenai izin dan badan hukum yayasan]"
-    columns={3}
-    items={[
-      {
-        title: 'Akta Notaris',
-        description: '[Nomor & Tanggal Akta Notaris]',
-        icon: 'tabler:file-certificate',
-      },
-      {
-        title: 'SK Kemenkumham',
-        description: '[Nomor SK Pengesahan Kemenkumham]',
-        icon: 'tabler:building-bank',
-      },
-      {
-        title: 'Izin Operasional Dinsos',
-        description: '[Nomor Izin Operasional Dinas Sosial]',
-        icon: 'tabler:shield-check',
       },
     ]}
   />
