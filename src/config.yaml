@@ -1,5 +1,5 @@
 site:
-  name: '[Nama Panti Asuhan]'
+  name: 'Panti Asuhan Attaufiq Malang'
   site: 'https://example.org'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: '[Nama Panti Asuhan]'
-    template: '%s — [Nama Panti Asuhan]'
+    default: 'Panti Asuhan Attaufiq Malang'
+    template: '%s — Panti Asuhan Attaufiq Malang'
   description: '[Deskripsi singkat panti asuhan untuk mesin pencari / SEO]'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: '[Nama Panti Asuhan]'
+    site_name: 'Panti Asuhan Attaufiq Malang'
     images:
       - url: '~/assets/images/default.png'
         width: 1200
