@@ -33,13 +33,13 @@ export default defineConfig({
     defaultStrategy: 'viewport',
   },
 
-  // Native Fonts API: self-hosts + subsets + preloads Plus Jakarta Sans & DM Sans
+  // Native Fonts API: self-hosts + subsets + preloads Outfit & Inter
   // and generates metric-adjusted fallbacks. Injected via <Font /> in Layout.astro.
   fonts: [
     {
       provider: fontProviders.fontsource(),
-      name: 'Plus Jakarta Sans',
-      cssVariable: '--font-jakarta',
+      name: 'Outfit',
+      cssVariable: '--font-outfit',
       weights: ['400 800'],
       styles: ['normal'],
       subsets: ['latin'],
@@ -47,8 +47,8 @@ export default defineConfig({
     },
     {
       provider: fontProviders.fontsource(),
-      name: 'DM Sans',
-      cssVariable: '--font-dm-sans',
+      name: 'Inter',
+      cssVariable: '--font-inter',
       weights: ['400 700'],
       styles: ['normal'],
       subsets: ['latin'],
