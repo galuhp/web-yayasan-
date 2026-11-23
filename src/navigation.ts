@@ -62,12 +62,10 @@ export const footerData = {
       ],
     },
     {
-      title: 'Donasi & Transparansi',
+      title: 'Donasi',
       links: [
         { text: 'Cara Donasi', href: getPermalink('/donasi') },
-        { text: 'Kebutuhan Mendesak', href: getPermalink('/donasi#kebutuhan') },
         { text: 'Rekening Resmi', href: getPermalink('/donasi#rekening') },
-        { text: 'Laporan Transparansi', href: getPermalink('/donasi#transparansi') },
       ],
     },
     {
