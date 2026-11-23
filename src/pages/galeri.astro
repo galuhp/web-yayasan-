@@ -3,8 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Galeri Kegiatan',
@@ -29,22 +27,4 @@ const metadata = {
       <div class="elfsight-app-4092435d-5066-42da-b781-64a9f0174127" data-elfsight-app-lazy></div>
     </div>
   </WidgetWrapper>
-
-  <!-- CTA -->
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Donasi Sekarang',
-        href: getPermalink('/donasi'),
-      },
-      {
-        text: 'Hubungi Kami',
-        href: getPermalink('/kontak'),
-      },
-    ]}
-  >
-    <Fragment slot="title">[Judul Ajakan Kunjungan / Dokumentasi]</Fragment>
-    <Fragment slot="subtitle">[Placeholder deskripsi singkat ajakan melihat kabar terbaru atau berdonasi]</Fragment>
-  </CallToAction>
 </Layout>
