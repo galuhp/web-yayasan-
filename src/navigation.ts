@@ -83,7 +83,7 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/yayasan_attaufiqmlg/' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/yayasan.attaufiqmalang' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: '#' },
     { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: '#' },
   ],
