@@ -1,13 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Gallery from '~/components/widgets/Gallery.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Galeri Kegiatan',
-  description: '[Placeholder deskripsi halaman Galeri Kegiatan]',
+  description: 'Dokumentasi kegiatan Yayasan Anak Yatim At-Taufiq Malang melalui feed Instagram @yayasan_attaufiqmlg.',
 };
 ---
 
@@ -15,49 +16,19 @@ const metadata = {
   <!-- Hero -->
   <HeroText
     tagline="Dokumentasi"
-    title="[Judul Halaman Galeri Kegiatan]"
-    subtitle="[Placeholder deskripsi singkat mengenai dokumentasi foto kegiatan anak asuh dan kunjungan donatur]"
+    title="Galeri Kegiatan"
+    subtitle="Ikuti dokumentasi kegiatan anak asuh dan aktivitas Yayasan Anak Yatim At-Taufiq Malang."
   />
 
-  <!-- Galeri Foto -->
-  <Gallery
-    tagline="Momen Kebersamaan"
-    title="[Judul Grid Galeri Foto]"
-    subtitle="[Placeholder sub-judul galeri]"
-    columns={3}
-    images={[
-      {
-        src: '~/assets/images/placeholders/galeri-1.png',
-        alt: '[Placeholder: Foto Kegiatan 1]',
-        caption: '[Caption Foto 1 — Tanggal / Nama Kegiatan]',
-      },
-      {
-        src: '~/assets/images/placeholders/galeri-2.png',
-        alt: '[Placeholder: Foto Kegiatan 2]',
-        caption: '[Caption Foto 2 — Tanggal / Nama Kegiatan]',
-      },
-      {
-        src: '~/assets/images/placeholders/galeri-3.png',
-        alt: '[Placeholder: Foto Kegiatan 3]',
-        caption: '[Caption Foto 3 — Tanggal / Nama Kegiatan]',
-      },
-      {
-        src: '~/assets/images/placeholders/galeri-2.png',
-        alt: '[Placeholder: Foto Kegiatan 4]',
-        caption: '[Caption Foto 4 — Tanggal / Nama Kegiatan]',
-      },
-      {
-        src: '~/assets/images/placeholders/galeri-3.png',
-        alt: '[Placeholder: Foto Kegiatan 5]',
-        caption: '[Caption Foto 5 — Tanggal / Nama Kegiatan]',
-      },
-      {
-        src: '~/assets/images/placeholders/galeri-1.png',
-        alt: '[Placeholder: Foto Kegiatan 6]',
-        caption: '[Caption Foto 6 — Tanggal / Nama Kegiatan]',
-      },
-    ]}
-  />
+  <!-- Elfsight Social Feed -->
+  <WidgetWrapper containerClass="max-w-6xl mx-auto">
+    <Headline tagline="Instagram Resmi" title="@yayasan_attaufiqmlg" />
+    <div class="mt-4">
+      <!-- Elfsight Social Feed | Untitled Social Feed -->
+      <script is:inline src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-4092435d-5066-42da-b781-64a9f0174127" data-elfsight-app-lazy></div>
+    </div>
+  </WidgetWrapper>
 
   <!-- CTA -->
   <CallToAction
