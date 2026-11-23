@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -24,17 +24,8 @@ export const headerData = {
       href: getPermalink('/program'),
     },
     {
-      text: 'Galeri & Berita',
-      links: [
-        {
-          text: 'Galeri Kegiatan',
-          href: getPermalink('/galeri'),
-        },
-        {
-          text: 'Berita & Artikel',
-          href: getBlogPermalink(),
-        },
-      ],
+      text: 'Galeri Kegiatan',
+      href: getPermalink('/galeri'),
     },
     {
       text: 'Kontak',
@@ -58,7 +49,6 @@ export const footerData = {
       links: [
         { text: 'Program Pembinaan', href: getPermalink('/program') },
         { text: 'Galeri Kegiatan', href: getPermalink('/galeri') },
-        { text: 'Berita & Artikel', href: getBlogPermalink() },
       ],
     },
     {
