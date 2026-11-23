@@ -7,48 +7,81 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Tentang Kami',
-  description: '[Placeholder deskripsi halaman Tentang Kami]',
+  title: 'Profil Yayasan',
+  description:
+    'Profil dan sejarah berdirinya Yayasan Anak Yatim At-Taufiq Malang sejak 1995 hingga resmi berdiri pada 4 April 1996.',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero -->
   <Hero
-    tagline="Tentang Kami"
+    tagline="Profil At-Taufiq"
     image={{
       src: '~/assets/images/placeholders/hero-panti.png',
-      alt: '[Placeholder: Foto Gedung / Pengurus & Anak Asuh]',
+      alt: 'Profil Yayasan Anak Yatim At-Taufiq Malang',
     }}
   >
     <Fragment slot="title">
-      [Judul Halaman Tentang Kami] <span class="text-accent dark:text-white">[Sorotan]</span>
+      Profil <span class="text-accent dark:text-white">At-Taufiq Malang</span>
     </Fragment>
-    <Fragment slot="subtitle"> [Placeholder ringkasan profil singkat yayasan / panti asuhan] </Fragment>
+    <Fragment slot="subtitle">
+      Yayasan Anak Yatim AT-TAUFIQ secara resmi berdiri pada tanggal 4 April 1996 dan bergerak di bidang sosial
+      keagamaan di Kota Malang.
+    </Fragment>
   </Hero>
 
   <!-- Profil & Sejarah -->
   <Content
     id="profil"
-    tagline="Profil & Sejarah"
-    title="[Judul Sejarah Berdirinya Panti Asuhan]"
+    tagline="Sejarah Yayasan"
+    title="Perjalanan Berdirinya Yayasan Anak Yatim At-Taufiq"
     items={[
       {
-        title: 'Tahun Berdiri',
-        description: '[Tahun berdiri dan latar belakang singkat]',
+        title: 'Awal Pengajian (Agustus – November 1995)',
+        description:
+          'Bermula dari pengajian syukuran HUT Kemerdekaan RI Agustus 1995 dengan modal spontanitas Rp 55.000,-, berkembang menjadi Rp 70.000,-, hingga Rp 125.000,- pada November 1995.',
       },
       {
-        title: 'Lingkup Layanan',
-        description: '[Placeholder sasaran penerima manfaat / anak asuh]',
+        title: 'Resmi Berdiri (4 April 1996)',
+        description:
+          'Berdasarkan Akte Notaris Nomor 30 Tahun 1996 dan Surat Tanda Pendaftaran (STP) Departemen Sosial Kanwil Jawa Timur Nomor 450/STP/ORSOS/XI/1996.',
+      },
+      {
+        title: 'Tanah Wakaf & Asrama (1997)',
+        description:
+          'Memiliki tanah wakaf seluas 540 m² dari keluarga almarhum Bapak H. Abdurrahman Sanan Malang untuk unit asrama dan masjid.',
       },
     ]}
     image={{
       src: '~/assets/images/placeholders/kegiatan-panti.png',
-      alt: '[Placeholder: Foto Dokumentasi Sejarah Panti]',
+      alt: 'Dokumentasi Yayasan Anak Yatim At-Taufiq Malang',
     }}
   >
     <Fragment slot="content">
-      <p>[Placeholder paragraf sejarah berdirinya yayasan dan panti asuhan.]</p>
+      <p>
+        Bermula dari acara pengajian yang diadakan secara sederhana dalam rangka syukuran peringatan HUT Kemerdekaan RI
+        pada bulan Agustus 1995, para peserta pengajian sepakat dan bertekad untuk memulai merawat anak yatim dengan
+        modal uang hasil spontanitas sebesar Rp. 55.000,-. Dua bulan berikutnya uang tersebut bertambah menjadi Rp.
+        70.000,- dan dua bulan berikutnya lagi, tepatnya pada bulan November 1995 menjadi Rp. 125.000,- setelah diadakan
+        pertemuan pertama untuk memastikan perlu tidaknya realisasi kesepakatan dan tekad di atas.
+      </p>
+      <p class="mt-4">
+        Menyadari betapa sudah sangat jelas pesan agama Islam bahwa persoalan anak yatim dan orang miskin adalah menjadi
+        tanggung jawab umat Islam yang dengan berkat Rahmat Allah SWT mereka mempunyai kelonggaran atau kelebihan untuk
+        ikut serta secara aktif menyelesaikan problem tersebut agar masa depan mereka bisa survive, maka perlu segera
+        diadakan musyawarah untuk membicarakan kesepakatan dan tekad yang sangat mulia dan terpuji tersebut.
+      </p>
+      <p class="mt-4">
+        Yayasan Anak Yatim AT-TAUFIQ secara resmi berdiri pada tanggal 4 April 1996 berdasarkan dokumen akte notaris
+        nomor 30 tahun 1996 dan Surat Tanda Pendaftaran (STP) yang dikeluarkan oleh Departemen Sosial Kantor Wilayah
+        Jawa Timur nomor 450/STP/ORSOS/XI/1996 bergerak di bidang sosial keagamaan.
+      </p>
+      <p class="mt-4">
+        Sejalan dengan perkembangannya, Yayasan memiliki tanah wakaf dengan luas 540 m² yang diperoleh pada tahun 1997
+        dari keluarga almarhum Bapak H. Abdurrahman Sanan Malang, dengan bangunan asrama dan masjid sebagai pusat
+        pengasuhan dan pembinaan anak asuh.
+      </p>
     </Fragment>
   </Content>
 

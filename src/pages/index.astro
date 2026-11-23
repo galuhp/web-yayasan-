@@ -3,9 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Content from '~/components/widgets/Content.astro';
+import Quote from '~/components/widgets/Quote.astro';
 import Features from '~/components/widgets/Features.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE, METADATA, I18N } from 'astrowind:config';
@@ -13,7 +13,7 @@ import favIconSvg from '~/assets/favicons/favicon.svg';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Panti Asuhan Attaufiq Malang — [Tagline Singkat]',
+  title: 'Yayasan Anak Yatim At-Taufiq Malang — Bersama kita merajut masa depan Anak Yatim',
   ignoreTitleTemplate: true,
 };
 
@@ -45,7 +45,7 @@ const structuredData = [
 
   <!-- Hero Section -->
   <Hero
-    tagline="[Tagline Yayasan / Panti Asuhan]"
+    tagline="Yayasan Anak Yatim At-Taufiq"
     actions={[
       {
         variant: 'primary',
@@ -54,103 +54,100 @@ const structuredData = [
         icon: 'tabler:heart-handshake',
       },
       {
-        text: 'Tentang Kami',
+        text: 'Profil Yayasan',
         href: getPermalink('/tentang'),
       },
     ]}
-    image={{ src: '~/assets/images/placeholders/hero-panti.png', alt: '[Placeholder: Foto Utama Panti Asuhan]' }}
+    image={{ src: '~/assets/images/placeholders/hero-panti.png', alt: 'Yayasan Anak Yatim At-Taufiq Malang' }}
   >
     <Fragment slot="title">
-      [Judul Utama Halaman Beranda] <span class="text-accent dark:text-white">[Sorotan Judul]</span>
+      Bersama kita merajut <span class="text-accent dark:text-white">masa depan Anak Yatim</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      [Sub-judul singkat: deskripsi 1-2 kalimat mengenai peran dan tujuan panti asuhan]
+      Yayasan Attaufiq adalah Yayasan yang fokus mengabdi untuk mengasuh anak Yatim Piatu dan fakir miskin yang berada
+      di Malang. Dengan segala kemampuan, kami bertanggungjawab mewujudkan cita cita Anak Yatim agar bisa terwujud kelak
+      hingga mereka dewasa.
     </Fragment>
   </Hero>
 
-  <!-- Statistik Singkat -->
+  <!-- Data Anak Asuh -->
   <Stats
-    title="[Judul Bagian Statistik]"
-    subtitle="[Sub-judul singkat statistik]"
+    title="Data Anak Asuh"
+    subtitle="Total 34 anak asuh dalam pembinaan Yayasan Anak Yatim At-Taufiq Malang"
     stats={[
-      { title: 'Anak Asuh', amount: '[Jumlah]' },
-      { title: 'Tahun Berdiri', amount: '[Tahun]' },
-      { title: 'Program Pembinaan', amount: '[Jumlah]' },
-      { title: 'Relawan & Pengasuh', amount: '[Jumlah]' },
+      { title: 'TK & Balita', amount: '4' },
+      { title: 'SD / MI', amount: '13' },
+      { title: 'SMP / MTs', amount: '6' },
+      { title: 'Mahasiswa', amount: '11' },
     ]}
   />
 
-  <!-- Sekilas Tentang Panti -->
-  <Content
-    isReversed
-    tagline="Sekilas Tentang Kami"
-    title="[Judul Pengenalan Singkat Panti Asuhan]"
+  <!-- Pesan / Ayat -->
+  <Quote
+    quote="Sembahlah Allah dan janganlah kamu mempersekutukan-Nya dengan sesuatupun. Dan berbuat baiklah kepada dua orang ibu-bapak, karib-kerabat, anak-anak yatim, orang-orang miskin…."
+    name="QS. an-Nisa: 36"
+  />
+
+  <!-- Kegiatan Kami -->
+  <Features
+    id="kegiatan"
+    tagline="Kegiatan Kami"
+    title="Dokumentasi & Kegiatan Yayasan"
+    subtitle="Beberapa catatan kegiatan yang telah dilaksanakan bersama anak asuh dan pengurus"
     items={[
       {
-        title: '[Poin Keunggulan / Nilai 1]',
-        description: '[Placeholder deskripsi singkat poin 1]',
+        title: 'Pembersihan lokasi pembangunan Asrama Putri',
+        description: '11 Mei 2017',
+        icon: 'tabler:building-community',
       },
       {
-        title: '[Poin Keunggulan / Nilai 2]',
-        description: '[Placeholder deskripsi singkat poin 2]',
+        title: 'Pembersihan Taman Yayasan At-Taufiq',
+        description: '12 Desember 2016',
+        icon: 'tabler:plant',
       },
       {
-        title: '[Poin Keunggulan / Nilai 3]',
-        description: '[Placeholder deskripsi singkat poin 3]',
+        title: 'Lebaran 1437 H',
+        description: '7 Juli 2016',
+        icon: 'tabler:moon-stars',
+      },
+      {
+        title: 'Malam Takbir 1437 H',
+        description: '7 Juli 2016',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+  />
+
+  <!-- Lokasi Yayasan -->
+  <Content
+    isReversed
+    tagline="Lokasi Yayasan"
+    title="Yayasan Anak Yatim At-Taufiq"
+    items={[
+      {
+        title: 'Alamat',
+        description: 'Jl. Sanan 70 RT 08 RW.15 Purwantoro, Blimbing, Malang 65122',
+      },
+      {
+        title: 'Telepon',
+        description: '(0341) 411105',
       },
     ]}
     image={{
       src: '~/assets/images/placeholders/kegiatan-panti.png',
-      alt: '[Placeholder: Foto Kegiatan Anak Asuh]',
+      alt: 'Lokasi Yayasan Anak Yatim At-Taufiq Malang',
     }}
     callToAction={{
-      text: 'Selengkapnya tentang kami',
-      href: getPermalink('/tentang'),
+      text: 'Buka di Google Maps',
+      href: 'https://www.google.com/maps/search/?api=1&query=-7.9609307,112.6455318',
+      target: '_blank',
     }}
   >
     <Fragment slot="content">
-      <p>[Placeholder paragraf pengenalan singkat mengenai yayasan dan panti asuhan.]</p>
+      <p>Kunjungi asrama kami di kawasan Purwantoro, Blimbing, Kota Malang atau hubungi pengurus melalui telepon.</p>
     </Fragment>
   </Content>
-
-  <!-- Program Unggulan -->
-  <Features
-    id="program"
-    tagline="Program Kami"
-    title="[Judul Bagian Program Unggulan]"
-    subtitle="[Sub-judul singkat mengenai program pembinaan anak asuh]"
-    items={[
-      {
-        title: '[Program 1: Pendidikan]',
-        description: '[Placeholder deskripsi program pendidikan formal/non-formal]',
-        icon: 'tabler:book',
-      },
-      {
-        title: '[Program 2: Pembinaan Karakter]',
-        description: '[Placeholder deskripsi program pembinaan karakter/agama]',
-        icon: 'tabler:heart',
-      },
-      {
-        title: '[Program 3: Kesehatan & Gizi]',
-        description: '[Placeholder deskripsi program pemenuhan gizi dan kesehatan]',
-        icon: 'tabler:medical-cross',
-      },
-      {
-        title: '[Program 4: Keterampilan & Bakat]',
-        description: '[Placeholder deskripsi program pengembangan minat dan bakat]',
-        icon: 'tabler:palette',
-      },
-    ]}
-  />
-
-  <!-- Berita / Kegiatan Terbaru -->
-  <BlogLatestPosts
-    title="[Judul Bagian Berita & Kegiatan Terbaru]"
-    information="[Placeholder deskripsi singkat bagian kabar terbaru dan dokumentasi kegiatan]"
-    linkText="Lihat semua berita"
-    linkUrl={getPermalink('/berita')}
-  />
 
   <!-- Ajakan Donasi -->
   <CallToAction
@@ -167,10 +164,10 @@ const structuredData = [
       },
     ]}
   >
-    <Fragment slot="title">[Judul Ajakan Donasi / Dukungan]</Fragment>
+    <Fragment slot="title">Bersama Merajut Masa Depan Anak Yatim</Fragment>
 
     <Fragment slot="subtitle">
-      [Placeholder kalimat ajakan singkat untuk berdonasi, menjadi orang tua asuh, atau berkunjung]
+      Dukungan dan kepedulian Anda membantu mewujudkan cita-cita anak yatim piatu dan dhuafa hingga mereka dewasa.
     </Fragment>
   </CallToAction>
 </Layout>
