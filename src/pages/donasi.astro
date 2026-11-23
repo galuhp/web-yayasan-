@@ -6,7 +6,8 @@ import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
   title: 'Donasi',
-  description: '[Placeholder deskripsi halaman Donasi]',
+  description:
+    'Salurkan infaq, shodaqoh, zakat, sembako, atau beasiswa orang tua asuh melalui Yayasan Anak Yatim At-Taufiq Malang.',
 };
 ---
 
@@ -14,34 +15,38 @@ const metadata = {
   <!-- Hero -->
   <HeroText
     tagline="Donasi & Kepedulian"
-    title="[Judul Halaman Donasi]"
-    subtitle="[Placeholder deskripsi singkat mengenai penyaluran bantuan dan komitmen transparansi]"
+    title="Salurkan Kebaikan, Rajut Masa Depan Anak Yatim"
+    subtitle="Setiap dukungan Anda membantu biaya pendidikan, kebutuhan harian, dan pembinaan 34 anak asuh di Yayasan Anak Yatim At-Taufiq Malang hingga mereka mandiri."
   />
 
   <!-- Pilihan Jenis Donasi -->
   <Features2
     tagline="Bentuk Dukungan"
-    title="[Judul Pilihan Jenis Donasi]"
+    title="Pilihan Penyaluran Donasi"
     columns={2}
     items={[
       {
-        title: '[Donasi Dana / Infaq / Sedekah]',
-        description: '[Placeholder keterangan donasi dana untuk operasional & pendidikan]',
+        title: 'Infaq, Shodaqoh & Zakat',
+        description:
+          'Donasi dana untuk kebutuhan makan sehari-hari, operasional asrama putra dan putri, serta pembinaan anak asuh.',
         icon: 'tabler:cash',
       },
       {
-        title: '[Donasi Barang / Sembako]',
-        description: '[Placeholder keterangan penerimaan donasi barang atau bahan pokok]',
+        title: 'Donasi Sembako & Kebutuhan Pokok',
+        description:
+          'Menerima bantuan beras, minyak goreng, lauk pauk, perlengkapan mandi, maupun alat tulis yang dapat diantar langsung ke asrama.',
         icon: 'tabler:package',
       },
       {
-        title: '[Program Orang Tua Asuh / Beasiswa]',
-        description: '[Placeholder keterangan dukungan biaya sekolah anak asuh]',
+        title: 'Program Orang Tua Asuh / Beasiswa',
+        description:
+          'Dukungan biaya pendidikan berkala bagi anak asuh dari jenjang TK/Balita, SD/MI, SMP/MTs, hingga Mahasiswa.',
         icon: 'tabler:school',
       },
       {
-        title: '[Kunjungan & Santunan Langsung]',
-        description: '[Placeholder keterangan tata cara kunjungan atau acara santunan]',
+        title: 'Kunjungan, Doa Bersama & Santunan',
+        description:
+          'Yayasan terbuka bagi donatur, komunitas, maupun instansi yang ingin bersilaturahmi, mengadakan buka bersama, atau syukuran bersama anak asuh.',
         icon: 'tabler:users',
       },
     ]}
@@ -72,7 +77,10 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <p>[Placeholder catatan keamanan: pastikan transfer hanya ke rekening atas nama yayasan.]</p>
+      <p>
+        Mohon pastikan nama penerima yang tertera adalah <strong>Yayasan Anak Yatim At-Taufiq Malang</strong> sebelum melakukan
+        transfer. Setelah transfer, silakan konfirmasi melalui telepon atau WhatsApp pengurus.
+      </p>
     </Fragment>
   </Content>
 </Layout>
