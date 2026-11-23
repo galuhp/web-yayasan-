@@ -70,19 +70,23 @@
   @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
 }
 
-/* Floating pill header: enhanced backdrop on scroll, full-bleed when mobile menu is expanded. */
+/* Floating pill header (Soft Sage Mist): enhanced backdrop on scroll, full-bleed when mobile menu is expanded. */
 #header.scroll > div:first-child {
-  @apply bg-page lg:backdrop-blur-md shadow-xl shadow-black/10;
+  background-color: rgb(240 247 242 / 0.97);
+  border-color: rgb(21 128 61 / 0.24);
+  box-shadow: 0 12px 32px rgb(22 101 52 / 0.14);
 }
 @media (width >= 64rem) {
   #header.scroll > div:first-child {
-    background-color: color-mix(in srgb, var(--aw-color-bg-page) 94%, transparent);
+    background-color: rgb(240 247 242 / 0.95);
+    @apply backdrop-blur-md;
   }
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply border border-gray-500/30;
-  background-color: color-mix(in srgb, var(--aw-color-bg-page) 92%, transparent);
+  background-color: rgb(15 31 23 / 0.95);
+  border-color: rgb(34 197 94 / 0.28);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.55);
 }
 
 #header.expanded {
@@ -131,8 +135,12 @@
 /* Current page in the header navigation (set server-side in Header.astro and
    kept in sync on client-side navigations). Override --aw-color-link in
    CustomStyles.astro to change the colour. */
-#header nav .aw-link-active {
-  @apply text-link;
+#header nav > ul > li > a.aw-link-active,
+#header nav > ul > li.dropdown > button.aw-link-active {
+  @apply text-link font-semibold bg-white shadow-xs ring-1 ring-primary/15 dark:bg-primary/45 dark:text-emerald-50 dark:ring-emerald-300/25 dark:shadow-none;
+}
+#header nav .dropdown-menu a.aw-link-active {
+  @apply text-link font-semibold bg-white/80 dark:bg-primary/35 dark:text-emerald-50;
 }
 
 .dd *:first-child {

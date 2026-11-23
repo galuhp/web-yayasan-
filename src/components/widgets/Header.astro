@@ -50,6 +50,15 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 // regardless of the `trailingSlash` setting (`getPermalink()` emits `/contact/`
 // when it is enabled, while `currentPath` above never has one, see #557).
 const isActive = (href?: string) => typeof href === 'string' && `/${trimSlash(href)}` === currentPath;
+const isDropdownActive = (childLinks?: Array<MenuLink>) =>
+  Boolean(
+    currentPath !== '/' &&
+    childLinks?.some(({ href }) => {
+      if (typeof href !== 'string' || href.startsWith('#')) return false;
+      const pathOnly = href.split('#')[0];
+      return `/${trimSlash(pathOnly)}` === currentPath;
+    })
+  );
 
 // The header is kept across view transitions (transition:persist) so its state
 // survives client-side navigations. Astro matches persisted elements by name,
@@ -68,23 +77,23 @@ const persistKey = `header-${Array.from(
     class:list={[
       { sticky: isSticky, relative: !isSticky, dark: isDark },
       'top-3 z-40 flex-none mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] transition-[opacity] ease-in-out',
-      { 'max-w-6xl': !isFullWidth },
+      { 'max-w-7xl': !isFullWidth },
     ]}
     {...isSticky ? { 'data-aw-sticky-header': true } : {}}
     {...id ? { id } : {}}
   >
     <div
-      class="absolute inset-0 rounded-full bg-page/85 dark:bg-slate-900/85 backdrop-blur-md border border-gray-200/80 dark:border-slate-700/60 shadow-lg shadow-black/5 transition-all duration-200"
+      class="absolute inset-0 rounded-full bg-[#F0F7F2]/92 dark:bg-[#0F1F17]/90 backdrop-blur-md border border-primary/20 dark:border-emerald-500/22 shadow-lg shadow-primary/10 dark:shadow-xl dark:shadow-black/45 transition-all duration-200"
     >
     </div>
     <div
       class:list={[
-        'relative text-default py-2 px-4 lg:px-6 mx-auto w-full',
+        'relative text-[#1F3A2A] dark:text-emerald-100/90 py-2 px-4 lg:px-5 xl:px-6 mx-auto w-full',
         {
           'lg:flex lg:justify-between': position !== 'center',
         },
         {
-          'lg:grid lg:grid-cols-3 lg:items-center': position === 'center',
+          'lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4': position === 'center',
         },
       ]}
     >
@@ -97,7 +106,7 @@ const persistKey = `header-${Array.from(
         </div>
       </div>
       <nav
-        class="items-center w-full lg:w-auto hidden lg:flex lg:mx-4 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
+        class="items-center w-full lg:w-auto hidden lg:flex text-[#1F3A2A] dark:text-emerald-100/90 overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
         aria-label="Main navigation"
       >
         <ul
@@ -110,7 +119,10 @@ const persistKey = `header-${Array.from(
                   <>
                     <button
                       type="button"
-                      class="hover:text-link dark:hover:text-white lg:hover:bg-primary/10 dark:lg:hover:bg-white/10 lg:rounded-full px-3.5 py-2.5 lg:py-2 flex items-center whitespace-nowrap transition-colors"
+                      class:list={[
+                        'hover:text-primary dark:hover:text-white lg:hover:bg-white/70 dark:lg:hover:bg-white/10 lg:rounded-full px-3 xl:px-3.5 py-2.5 lg:py-2 flex items-center whitespace-nowrap transition-colors',
+                        { 'aw-link-active': isDropdownActive(links) },
+                      ]}
                     >
                       {text}{' '}
                       <Icon
@@ -118,12 +130,12 @@ const persistKey = `header-${Array.from(
                         class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline"
                       />
                     </button>
-                    <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-slate-900/95 dark:lg:border dark:lg:border-slate-700/50 rounded-xl lg:absolute pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/95 lg:min-w-[200px] drop-shadow-xl lg:mt-1">
+                    <ul class="dropdown-menu lg:backdrop-blur-md lg:bg-[#F5FBF7]/95 lg:border lg:border-primary/15 dark:lg:bg-[#0F1F17]/95 dark:lg:border-emerald-500/22 rounded-xl lg:absolute pl-4 lg:pl-0 lg:hidden font-medium lg:min-w-[200px] drop-shadow-xl lg:mt-1">
                       {links.map(({ text: text2, href: href2 }) => (
                         <li>
                           <a
                             class:list={[
-                              'first:rounded-t-xl last:rounded-b-xl lg:hover:bg-primary/10 hover:text-link dark:hover:text-white dark:hover:bg-white/10 py-2 px-5 block whitespace-nowrap transition-colors',
+                              'first:rounded-t-xl last:rounded-b-xl lg:hover:bg-white hover:text-primary dark:hover:text-emerald-50 dark:hover:bg-emerald-900/50 py-2 px-5 block whitespace-nowrap transition-colors',
                               { 'aw-link-active': isActive(href2) },
                             ]}
                             href={href2}
@@ -137,7 +149,7 @@ const persistKey = `header-${Array.from(
                 ) : (
                   <a
                     class:list={[
-                      'hover:text-link dark:hover:text-white lg:hover:bg-primary/10 dark:lg:hover:bg-white/10 lg:rounded-full px-3.5 py-2.5 lg:py-2 flex items-center whitespace-nowrap transition-colors',
+                      'hover:text-primary dark:hover:text-white lg:hover:bg-white/70 dark:lg:hover:bg-white/10 lg:rounded-full px-3 xl:px-3.5 py-2.5 lg:py-2 flex items-center whitespace-nowrap transition-colors',
                       { 'aw-link-active': isActive(href) },
                     ]}
                     href={href}
@@ -158,11 +170,18 @@ const persistKey = `header-${Array.from(
       >
         <div class="items-center flex justify-between w-full lg:w-auto">
           <div class="flex">
-            {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 lg:w-5 lg:h-5 lg:inline-block" />}
+            {
+              showToggleTheme && (
+                <ToggleTheme
+                  class="text-[#1F3A2A]/80 dark:text-emerald-100/80 hover:bg-white/70 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-full text-sm p-2.5 inline-flex items-center transition-colors cursor-pointer"
+                  iconClass="w-6 h-6 lg:w-5 lg:h-5 lg:inline-block"
+                />
+              )
+            }
             {
               showRssFeed && (
                 <a
-                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  class="text-[#1F3A2A]/80 dark:text-emerald-100/80 hover:bg-white/70 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-full text-sm p-2.5 inline-flex items-center transition-colors"
                   aria-label="RSS Feed"
                   href={getAsset('/rss.xml')}
                 >
@@ -175,7 +194,10 @@ const persistKey = `header-${Array.from(
             actions?.length ? (
               <span class="ml-4 rtl:ml-0 rtl:mr-4">
                 {actions.map((btnProps) => (
-                  <Button {...btnProps} class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto" />
+                  <Button
+                    {...btnProps}
+                    class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto dark:bg-emerald-600 dark:border-emerald-600 dark:hover:bg-emerald-500 dark:hover:border-emerald-500"
+                  />
                 ))}
               </span>
             ) : (
@@ -300,6 +322,19 @@ const persistKey = `header-${Array.from(
         const isPathLink =
           url.origin === window.location.origin && !url.hash && !a.getAttribute('href')?.startsWith('#');
         a.classList.toggle('aw-link-active', isPathLink && norm(url.pathname) === current);
+      });
+      this.querySelectorAll<HTMLLIElement>('nav li.dropdown').forEach((li) => {
+        const btn = li.querySelector<HTMLButtonElement>(':scope > button');
+        if (!btn) return;
+        const hasActiveChild =
+          current !== '/' &&
+          Array.from(li.querySelectorAll<HTMLAnchorElement>('.dropdown-menu a[href]')).some((a) => {
+            const raw = a.getAttribute('href') || '';
+            if (raw.startsWith('#')) return false;
+            const url = new URL(a.href, window.location.href);
+            return url.origin === window.location.origin && norm(url.pathname) === current;
+          });
+        btn.classList.toggle('aw-link-active', hasActiveChild);
       });
     }
   }
