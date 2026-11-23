@@ -1,9 +1,21 @@
 ---
+import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
+import logoImg from '~/assets/images/logo.png';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
+<span class="inline-flex items-center gap-2.5 self-center">
+  <Image
+    src={logoImg}
+    alt={SITE?.name || 'Logo Panti Asuhan At-Taufiq Malang'}
+    width={36}
+    height={36}
+    class="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-contain shrink-0"
+    loading="eager"
+  />
+  <span
+    class="text-base sm:text-lg font-bold tracking-tight text-gray-900 whitespace-nowrap dark:text-white max-w-[200px] sm:max-w-none truncate"
+  >
+    {SITE?.name}
+  </span>
 </span>
