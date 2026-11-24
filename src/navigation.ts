@@ -29,7 +29,16 @@ export const headerData = {
     },
     {
       text: 'Kontak',
-      href: getPermalink('/kontak'),
+      links: [
+        {
+          text: 'Hubungi Kami',
+          href: getPermalink('/kontak'),
+        },
+        {
+          text: 'Lokasi 2 Asrama',
+          href: getPermalink('/lokasi'),
+        },
+      ],
     },
   ],
   actions: [{ text: 'Donasi Sekarang', href: getPermalink('/donasi'), variant: 'primary' as const }],
@@ -62,7 +71,7 @@ export const footerData = {
       title: 'Kontak',
       links: [
         { text: 'Hubungi Kami', href: getPermalink('/kontak') },
-        { text: 'Alamat & Peta', href: getPermalink('/kontak#lokasi') },
+        { text: 'Lokasi 2 Asrama', href: getPermalink('/lokasi') },
         { text: 'FAQ', href: getPermalink('/kontak#faq') },
       ],
     },
