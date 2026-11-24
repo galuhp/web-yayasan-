@@ -1,6 +1,6 @@
 site:
   name: 'Panti Asuhan Attaufiq Malang'
-  site: 'https://example.org'
+  site: 'https://attaufiq.rote.biz.id'
   base: '/'
   trailingSlash: false
 
@@ -11,7 +11,7 @@ metadata:
   title:
     default: 'Panti Asuhan Attaufiq Malang'
     template: '%s — Panti Asuhan Attaufiq Malang'
-  description: '[Deskripsi singkat panti asuhan untuk mesin pencari / SEO]'
+  description: 'Yayasan Anak Yatim At-Taufiq Malang — Lembaga sosial keagamaan pengasuhan, pendidikan, dan pembinaan kemandirian anak yatim, piatu, dan dhuafa sejak 1996.'
   robots:
     index: true
     follow: true

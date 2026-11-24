@@ -87,6 +87,6 @@ export const footerData = {
     { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: '#' },
   ],
   footNote: `
-    © [Tahun] Panti Asuhan Attaufiq Malang. Seluruh hak cipta dilindungi.
+    © 2005 Panti Asuhan At-Taufiq Malang. Seluruh hak cipta dilindungi.
   `,
 };
